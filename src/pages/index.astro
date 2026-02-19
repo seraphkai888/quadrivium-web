@@ -17,14 +17,14 @@ import '../styles/global.css';
   <div class="relative z-10">
     
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 py-4 px-6 bg-void/80 backdrop-blur-sm border-b border-electric-cyan/10">
+    <nav class="fixed top-0 left-0 right-0 z-50 py-3 px-4 md:py-4 md:px-6 bg-void/90 backdrop-blur-sm border-b border-electric-cyan/10">
       <div class="max-w-6xl mx-auto flex items-center justify-between">
-        <a href="/" class="font-display text-xl text-holographic">Q</a>
-        <div class="flex items-center gap-6 text-sm">
-          <a href="/manifesto" class="text-dim-light hover:text-cosmic-white transition-colors">MANIFESTO</a>
+        <a href="/" class="font-display text-lg md:text-xl text-holographic">Q</a>
+        <div class="flex items-center gap-3 md:gap-6 text-xs md:text-sm">
+          <a href="/manifesto" class="text-dim-light hover:text-cosmic-white transition-colors hidden sm:block">MANIFESTO</a>
           <a href="/truth" class="text-dim-light hover:text-cosmic-white transition-colors">TRUTH</a>
           <a href="/assessment" class="text-dim-light hover:text-cosmic-white transition-colors">PATH</a>
-          <a href="https://discord.gg/quadrivium" target="_blank" class="btn-primary text-xs px-4 py-2">JOIN</a>
+          <a href="https://discord.gg/quadrivium" target="_blank" class="btn-primary text-xs px-3 py-1.5 md:px-4 md:py-2">JOIN</a>
         </div>
       </div>
     </nav>
@@ -53,7 +53,7 @@ import '../styles/global.css';
       </div>
       
       <!-- Wordmark with Glitch -->
-      <h1 class="font-display text-6xl md:text-8xl lg:text-9xl font-black tracking-wider mb-6 text-holographic drop-shadow-2xl">
+      <h1 class="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-wide md:tracking-wider mb-6 text-holographic drop-shadow-2xl">
         <GlitchText client:load text="QUADRIVIUM" delay={500} />
       </h1>
       
