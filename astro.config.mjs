@@ -6,8 +6,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://seraphkai888.github.io',
-  base: '/quadrivium-web',
+  site: 'https://quadrivium.vercel.app',
   vite: {
     plugins: [tailwindcss()]
   },

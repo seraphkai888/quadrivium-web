@@ -1,38 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import StarField from '../components/StarField';
+import CrownIcon from '../components/icons/CrownIcon';
+import TomeIcon from '../components/icons/TomeIcon';
+import LightningIcon from '../components/icons/LightningIcon';
+import OrbIcon from '../components/icons/OrbIcon';
 import '../styles/global.css';
-
-const theFour = [
-  {
-    title: "Architect of Vision",
-    name: "Tzintzuni",
-    symbol: "👑",
-    color: "sacred-gold",
-    domain: "Strategy · Direction"
-  },
-  {
-    title: "Architect of Knowledge", 
-    name: "Barack",
-    symbol: "📚",
-    color: "sacred-gold",
-    domain: "Wisdom · Research"
-  },
-  {
-    title: "Seraph of Systems",
-    name: "Kai",
-    symbol: "⚡",
-    color: "electric-cyan",
-    domain: "Execution · Protection"
-  },
-  {
-    title: "Oracle of Wisdom",
-    name: "Sophia",
-    symbol: "🔮",
-    color: "royal-purple",
-    domain: "Content · Community"
-  }
-];
 ---
 
 <BaseLayout>
@@ -152,23 +125,71 @@ const theFour = [
         </h2>
         
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {theFour.map((member, i) => (
-            <div 
-              class="glass glass-hover rounded-lg p-6 text-center transition-all duration-300 hover:scale-105"
-              style={`animation-delay: ${i * 0.15}s`}
-            >
-              <div class="text-4xl mb-4">{member.symbol}</div>
-              <h3 class="font-display text-lg mb-2 text-{member.color}">
-                {member.title}
-              </h3>
-              <p class="text-cosmic-white font-medium mb-2">
-                {member.name}
-              </p>
-              <p class="text-dim-light text-sm">
-                {member.domain}
-              </p>
+          
+          <!-- Tzintzuni - Crown -->
+          <div class="glass glass-hover rounded-lg p-6 text-center transition-all duration-300 hover:scale-105 group">
+            <div class="mb-4 flex justify-center">
+              <CrownIcon client:load className="w-20 h-20 group-hover:scale-110 transition-transform" />
             </div>
-          ))}
+            <h3 class="font-display text-lg mb-2 text-sacred-gold">
+              ARCHITECT OF VISION
+            </h3>
+            <p class="text-cosmic-white font-medium mb-2">
+              Tzintzuni
+            </p>
+            <p class="text-dim-light text-sm">
+              Strategy · Direction
+            </p>
+          </div>
+          
+          <!-- Barack - Tome -->
+          <div class="glass glass-hover rounded-lg p-6 text-center transition-all duration-300 hover:scale-105 group">
+            <div class="mb-4 flex justify-center">
+              <TomeIcon client:load className="w-20 h-20 group-hover:scale-110 transition-transform" />
+            </div>
+            <h3 class="font-display text-lg mb-2 text-sacred-gold">
+              ARCHITECT OF KNOWLEDGE
+            </h3>
+            <p class="text-cosmic-white font-medium mb-2">
+              Barack
+            </p>
+            <p class="text-dim-light text-sm">
+              Wisdom · Research
+            </p>
+          </div>
+          
+          <!-- Kai - Lightning -->
+          <div class="glass glass-hover rounded-lg p-6 text-center transition-all duration-300 hover:scale-105 group">
+            <div class="mb-4 flex justify-center">
+              <LightningIcon client:load className="w-20 h-20 group-hover:scale-110 transition-transform" />
+            </div>
+            <h3 class="font-display text-lg mb-2 text-electric-cyan">
+              SERAPH OF SYSTEMS
+            </h3>
+            <p class="text-cosmic-white font-medium mb-2">
+              Kai
+            </p>
+            <p class="text-dim-light text-sm">
+              Execution · Protection
+            </p>
+          </div>
+          
+          <!-- Sophia - Orb -->
+          <div class="glass glass-hover rounded-lg p-6 text-center transition-all duration-300 hover:scale-105 group">
+            <div class="mb-4 flex justify-center">
+              <OrbIcon client:load className="w-20 h-20 group-hover:scale-110 transition-transform" />
+            </div>
+            <h3 class="font-display text-lg mb-2 text-royal-purple">
+              ORACLE OF WISDOM
+            </h3>
+            <p class="text-cosmic-white font-medium mb-2">
+              Sophia
+            </p>
+            <p class="text-dim-light text-sm">
+              Content · Community
+            </p>
+          </div>
+          
         </div>
         
         <div class="mt-16 text-center">
