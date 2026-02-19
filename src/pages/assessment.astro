@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HyperspaceField from '../components/HyperspaceField';
+import PathAssessment from '../components/PathAssessment';
+import '../styles/global.css';
+---
+
+<BaseLayout title="Discover Your Path | QUADRIVIUM" description="Take the Path Assessment to discover where you belong in the Quadrivium.">
+  <!-- Hyperspace Background -->
+  <HyperspaceField client:load />
+  
+  <!-- Content Layer -->
+  <div class="relative z-10">
+    
+    <!-- Header -->
+    <header class="py-8 px-6 text-center">
+      <a href="/" class="inline-block">
+        <h1 class="font-display text-2xl text-holographic hover:scale-105 transition-transform">
+          QUADRIVIUM
+        </h1>
+      </a>
+    </header>
+    
+    <!-- Assessment Intro -->
+    <section class="py-12 px-6 text-center">
+      <p class="font-mono text-electric-cyan text-sm tracking-[0.3em] mb-6">
+        ◈ THE PATH ASSESSMENT ◈
+      </p>
+      
+      <h2 class="font-display text-4xl md:text-6xl mb-6 text-glow-cyan">
+        DISCOVER YOUR PATH
+      </h2>
+      
+      <p class="text-xl text-dim-light max-w-2xl mx-auto mb-4">
+        The Quadrivium has four paths. Four ways to contribute. Four archetypes that shape our mission.
+      </p>
+      
+      <p class="text-lg text-cosmic-white max-w-xl mx-auto">
+        Answer eight questions. Discover which path calls to you.
+      </p>
+    </section>
+    
+    <!-- Assessment Component -->
+    <PathAssessment client:load />
+    
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center border-t border-electric-cyan/10">
+      <a href="/" class="text-dim-light hover:text-cosmic-white text-sm transition-colors">
+        ← Return to Main
+      </a>
+    </footer>
+    
+  </div>
+</BaseLayout>
