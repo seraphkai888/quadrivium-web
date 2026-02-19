@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   QUADRIVIUM — COSMIC DESIGN SYSTEM
+   "Four Paths. One Truth."
+   ═══════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* Void Palette */
+  --color-void: #000000;
+  --color-deep-space: #0A1628;
+  --color-cosmic-dark: #050a12;
+  
+  /* Energy Colors */
+  --color-electric-cyan: #00D4FF;
+  --color-royal-purple: #9B59B6;
+  --color-sacred-gold: #FFD700;
+  --color-nebula-pink: #FF006E;
+  
+  /* Text */
+  --color-cosmic-white: #E8E8E8;
+  --color-dim-light: #8892a0;
+  
+  /* Glow effects */
+  --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.5);
+  --glow-purple: 0 0 20px rgba(155, 89, 182, 0.5);
+  --glow-gold: 0 0 20px rgba(255, 215, 0, 0.5);
+  
+  /* Fonts */
+  --font-display: 'Orbitron', monospace;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-void);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-cosmic-white);
+  background: var(--color-void);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 212, 255, 0.3);
+  color: var(--color-cosmic-white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-deep-space);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-electric-cyan), var(--color-royal-purple));
+  border-radius: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════ */
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Holographic text effect */
+.text-holographic {
+  background: linear-gradient(
+    90deg,
+    var(--color-electric-cyan),
+    var(--color-royal-purple),
+    var(--color-sacred-gold),
+    var(--color-electric-cyan)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+/* Glow text */
+.text-glow-cyan {
+  text-shadow: var(--glow-cyan);
+}
+
+.text-glow-purple {
+  text-shadow: var(--glow-purple);
+}
+
+.text-glow-gold {
+  text-shadow: var(--glow-gold);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASS MORPHISM
+   ═══════════════════════════════════════════════════════════════ */
+
+.glass {
+  background: rgba(10, 22, 40, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.glass-hover:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-electric-cyan), var(--color-royal-purple));
+  color: var(--color-void);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-electric-cyan);
+  border: 1px solid var(--color-electric-cyan);
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: var(--font-display);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.btn-outline:hover {
+  background: rgba(0, 212, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SACRED GEOMETRY PATTERNS
+   ═══════════════════════════════════════════════════════════════ */
+
+.sacred-border {
+  position: relative;
+}
+
+.sacred-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    var(--color-electric-cyan),
+    var(--color-royal-purple),
+    var(--color-sacred-gold),
+    var(--color-electric-cyan)
+  );
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: gradient-rotate 8s linear infinite;
+}
+
+@keyframes gradient-rotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
